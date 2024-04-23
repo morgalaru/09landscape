@@ -20,6 +20,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <!--swiper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     
 
 </head>
@@ -32,17 +35,71 @@
 
     <div id="navWrapper">
         <nav>
+            <button id="hamburgerBtn">&#9776;</button>
             <ul id="primaryNav">
-                <li class="active"><a href="#">Learn</a></li>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Implement</a></li>
+                <li class="parent active"><a href="#">Services</a>
+                    <ul>
+                        <li><a href="#">Landscape Design</a></li>
+                        <li><a href="#">Landscape Maintenance</a></li>
+                        <li><a href="#">Tree Service</a></li>
+                        <li><a href="#">Sprinkler Systems</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </div>
 
     <div id="mainWrapper">
         <main>
-            <h1>Learn</h1>
+
+         <!-- Slider main container -->
+         <div class="swiper">
+
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+             <!-- Slides -->
+             <div class="swiper-slide">
+                <picture>
+                    <source srcset="images/sliderAsm.webp" media="(max-width: 746px)">
+                    <source srcset="images/sliderAmed.webp" media="(max-width: 1172px)">
+                    <img src="images/sliderAlarge.webp" alt="slider A" width="32" height="13">
+                </picture>
+             </div> <!--end one slide-->
+
+             <div class="swiper-slide">
+                <picture>
+                    <source srcset="images/sliderBsm.webp" media="(max-width: 746px)">
+                    <source srcset="images/sliderBmed.webp" media="(max-width: 1172px)">
+                    <img src="images/sliderBlarge.webp" alt="slider B" width="2.46" height="1">
+                </picture>
+             </div> <!--end one slide-->
+
+             <div class="swiper-slide">
+                <picture>
+                    <source srcset="images/sliderCsm.webp" media="(max-width: 746px)">
+                    <source srcset="images/sliderCmed.webp" media="(max-width: 1172px)">
+                    <img src="images/sliderClarge.webp" alt="slider C" width="2.46" height="1">
+                </picture>
+             </div> <!--end one slide-->
+            </div>
+
+             <!-- If we need pagination -->
+             <div class="swiper-pagination"></div>
+  
+             <!-- If we need navigation buttons -->
+             <div class="swiper-button-prev"></div>
+             <div class="swiper-button-next"></div>
+
+             <!--text-->
+             <div class="heroText">
+                <h3>You can tell us to "Shovel It!"</h3>
+                <p>and we'll take care of the rest.</p>
+            </div>
+         </div>
+
         </main>
     </div>
 
@@ -52,6 +109,8 @@
         </footer>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/scripts.js"></script>
+    
 </body>
 </html>

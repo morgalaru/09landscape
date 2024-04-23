@@ -44,29 +44,114 @@ header {
 #navWrapper {
     background-color: $primaryColor;
 }
+/* Navigation Button  -------------------------------------------------------- */    
 
-nav {
-    ul{
+nav button {
+	width: 100%;
+    padding: .4rem 2vw;
+	text-align:left;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #FFF;
+	cursor:pointer;
+}
+
+/* Navigation Bar -------------------------------------------------------- */
+	#primaryNav {
+        height: 0;
+        overflow: hidden;
+		margin: 0;
+		padding: 0;
+		z-index: 998;
+        font-weight: $lightWeight;
         list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        li {flex:1;}
+	}
+    #primaryNav li.active a{background-color: darken($primaryColor, 5%);}
+	#primaryNav li a {
+		display: block;
+		width: 100%;
+		padding: .75rem 2vw;
+		font-size: 14px;
+		text-shadow: -1px -1px 0 rgba(0,0,0,.15);
+		color: white;
+		text-decoration: none;
+		border-top: 1px solid rgba(0,0,0,.2);
+	}
+	#primaryNav li a:hover {
+		background-color: darken($primaryColor, 3%);
+	}
+
+	/* Toggle the navigation bar to expand down  */
+	#primaryNav.open {height: auto;}
+
+	/* Submenus – optional .parent class indicates dropdowns */
+	#primaryNav > li:hover > a {background-color: darken($primaryColor, 3%);}
+	#primaryNav li.parent > a:after {
+        font-size: .75rem;
+		content: "\25BC";
+		color: rgba(255,255,255,.5);
+		float: right;
+	}
+	#primaryNav li.parent > a:hover {
+		background: rgba(0,0,0,.5);
+	}
+    /*hide the sub menu items by default*/
+	#primaryNav li ul {
+		display: none;
+		background: rgba(0,0,0,.1);
+		padding: 0;
+	}
+	#primaryNav li ul a {
+		border-top: solid 1px rgba(0,0,0,0.2);
+		font-size: 14px;
+		padding: 10px 5%;
+		font-weight: $lightWeight;
+	}
+	#primaryNav li:hover ul {display: block;}
+     /* End Mobile Styles */
+
+
+
+//MAIN
+.swiper, .swiper img {
+    width: 100%;
+    height: auto;
+}
+.swiper {
+    position: relative;
+    z-index: -1;
+    .heroText {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0;
+        color: white;
+        font-size: 1rem;
+        text-shadow: 0 0 10px black;
+        background: linear-gradient(0deg, rgba(32,45,52,1) 0%, rgba(32,45,52,0.08) 80%, rgba(32,45,52,0) 90%);
+        padding-left: 2rem;
+        h3, p {margin-bottom: 2rem;}
+        h3{margin-bottom: 0px;}
+        p {margin-top: .2rem;}
+        z-index: 88;
     }
 
-    ul li a {
-        display: block;
-        padding: 0.75rem;
-        color: $backgroundColor;
-        font-weight:300;
-        text-align: center;
-        text-decoration: none;
-    }
-     ul li.active a {background-color: lighten($primaryColor, 5%);}
-     ul li a:hover {background-color: lighten($primaryColor, 8%);}
-}// end nav
+    //swiper nav style
+    --swiper-navigation-size: 30px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 15px;
+    --swiper-navigation-color: rgba(255,255,255,.75);
 
-//main
+    //swiper pagnination style
+    --swiper-pagination-color: rgba(255,255,255,.9); 
+
+}
+
+
+
+
+
 
 
 // begin footer

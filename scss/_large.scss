@@ -2,3 +2,15 @@ header, nav, main, footer {
     max-width: 75rem;
     margin: auto;
 }
+
+/* NAVIGATION */
+nav ul li a{
+    font-size: .9rem;
+    padding: .8rem 1.2rem;
+}
+
+// MAIN
+.swiper .heroText {
+    font-size: 2rem;
+    padding-left: 4rem;
+}
