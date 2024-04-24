@@ -331,7 +331,7 @@ body {
   font-family: "Barlow", sans-serif;
   font-weight: 400;
   color: #333;
-  background-color: #f3f7f7;
+  background-color: white;
 }
 
 #headerWrapper {
@@ -340,7 +340,8 @@ body {
 }
 
 header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 120px auto;
   align-items: center;
   padding: 1rem 16px;
   gap: 10px;
@@ -349,6 +350,15 @@ header h1 {
   margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
+}
+header .phone {
+  text-decoration: none;
+  color: #333;
+  margin-right: 0.3rem;
+  justify-self: end;
+}
+header .phone:hover {
+  color: #61715d;
 }
 
 #navWrapper {
@@ -375,6 +385,9 @@ nav button {
   padding: 0;
   z-index: 998;
   font-weight: 300;
+  list-style-type: none;
+}
+#primaryNav li ul {
   list-style-type: none;
 }
 
@@ -445,11 +458,11 @@ nav button {
 .swiper {
   position: relative;
   z-index: -1;
-  --swiper-navigation-size: 30px;
+  --swiper-navigation-size: 20px;
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 15px;
   --swiper-navigation-color: rgba(255,255,255,.75);
-  --swiper-pagination-color: rgba(255,255,255,.9);
+  --swiper-pagination-color: white;
 }
 .swiper .heroText {
   position: absolute;
@@ -471,6 +484,57 @@ nav button {
 }
 .swiper .heroText p {
   margin-top: 0.2rem;
+}
+
+.services {
+  display: grid;
+  padding: 1rem 16px;
+}
+.services section {
+  position: relative;
+}
+.services section h2 {
+  background-color: #538998;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 5px 5px 0 0;
+  color: #171717;
+}
+.services section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.services section img:last-child {
+  position: absolute;
+  bottom: 0;
+}
+
+.what {
+  margin: 1rem 16px;
+}
+
+.customers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.customers section {
+  padding: 16px;
+}
+.customers section img {
+  width: 100%;
+  height: auto;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  transition: transform 0.5s;
+}
+.customers section img:hover {
+  transform: rotate(-15deg);
+}
+.customers section p {
+  font-size: 0.9rem;
 }
 
 #footerWrapper {
@@ -550,6 +614,23 @@ nav button {
   .swiper .heroText {
     font-size: 1.5rem;
   }
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .services section {
+    margin: 10px;
+  }
+  .services section img {
+    margin: 0;
+  }
+  .customers section {
+    display: grid;
+    grid-template-columns: 140px auto;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    padding: 10px;
+  }
 }
 @media only screen and (min-width: 60rem) {
   header, nav, main, footer {
@@ -564,5 +645,22 @@ nav button {
   .swiper .heroText {
     font-size: 2rem;
     padding-left: 4rem;
+  }
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .customers {
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .customers section {
+    grid-template-columns: 200px auto;
+    -moz-column-gap: 1.2rem;
+         column-gap: 1.2rem;
+    align-items: center;
+  }
+  .customers section p {
+    font-size: 1rem;
   }
 }

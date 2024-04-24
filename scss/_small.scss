@@ -18,7 +18,7 @@ body {
     font-family: $defaultFont;
     font-weight: $normalWeight;
     color: $fontColor;
-    background-color: $backgroundColor;
+    background-color: white;
 }
 
 
@@ -28,7 +28,8 @@ body {
     color: $secondaryColor;
 }
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px auto;
     align-items: center;
     padding: 1rem $gutter;
     gap: 10px;
@@ -36,6 +37,13 @@ header {
         margin: 0;
         font-size: 1.8rem;
         font-weight: $boldWeight;
+    }
+    .phone {
+        text-decoration: none;
+        color: $fontColor;
+        margin-right: .3rem;
+        &:hover{color: #61715d;}
+        justify-self: end;
     }
 } // end header
 
@@ -66,6 +74,7 @@ nav button {
 		z-index: 998;
         font-weight: $lightWeight;
         list-style-type: none;
+        li ul {list-style-type: none;}
 	}
     #primaryNav li.active a{background-color: darken($primaryColor, 5%);}
 	#primaryNav li a {
@@ -138,18 +147,65 @@ nav button {
     }
 
     //swiper nav style
-    --swiper-navigation-size: 30px;
+    --swiper-navigation-size: 20px;
     --swiper-navigation-top-offset: 50%;
     --swiper-navigation-sides-offset: 15px;
     --swiper-navigation-color: rgba(255,255,255,.75);
 
     //swiper pagnination style
-    --swiper-pagination-color: rgba(255,255,255,.9); 
+    --swiper-pagination-color: white; 
 
 }
 
 
 
+.services {
+    display: grid;
+    padding: 1rem $gutter;
+    section {
+        position: relative;
+        h2{
+            background-color: $secondaryColor;
+            margin: 0;
+            padding: .5rem;
+            text-align: center;
+            font-size: 1.2rem;
+            border-radius: 5px 5px 0 0;
+            color: #171717;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        img:last-child {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+
+
+.what{margin: 1rem $gutter;}
+.customers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    section {
+        padding: 16px;
+        img{
+            width: 100%;
+            height: auto;
+            clip-path: circle(50% at 50% 50%);
+            transition: transform .5s;
+            &:hover{transform: rotate(-15deg);
+            }
+        }
+        p{
+            font-size: .9rem;
+        }
+    }// end section
+} // end parent
 
 
 
