@@ -559,6 +559,9 @@ nav button {
   nav button {
     display: none;
   }
+  ul#primaryNav {
+    height: auto;
+  }
   nav {
     background-color: #244151;
     z-index: 99;
@@ -638,6 +641,9 @@ nav button {
     margin: auto;
   }
   /* NAVIGATION */
+  #primaryNav {
+    height: auto;
+  }
   nav ul li a {
     font-size: 0.9rem;
     padding: 0.8rem 1.2rem;
