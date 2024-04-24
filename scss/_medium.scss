@@ -7,6 +7,8 @@ header {
 /* NAVIGATION STUFF GOES HERE  */
 nav button {display: none;}
 
+#primaryNav {height: auto;}
+
 nav {
     background-color: $primaryColor;
     z-index: 99;
